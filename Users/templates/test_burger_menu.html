@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      .menu-toggle {
+    display: none; /* Ховаємо невидимий чекбокс */
+}
+
+.menu-btn {
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #6495ED;
+    margin: 5px auto;
+    transition: 0.4s;
+}
+
+.menu-toggle:checked + .menu-btn .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle:checked + .menu-btn .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle:checked + .menu-btn .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.menu {
+    display: none;
+}
+
+.menu-toggle:checked + .menu-btn + .menu {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #F0FFF0;
+    color: #6495ED;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.menu-toggle:checked + .menu-btn + .menu a:hover {
+    background-color: #E6E6FA;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+    <input type="checkbox" class="menu-toggle" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </label>
+    <div class="menu">
+        <a href="/logout/" class="logout-btn">Logout</a>
+        <a href="/login/" class="login-btn">Login</a>
+        <a href="/registration/" class="registration-btn">Registration</a>
+    </div>
+    <h1>Ти зробив:</h1>
+    <h2>сторінку юзерів, логін сторінку, реєстрацію</h2>
+    <a href="/users/" class="users-btn">Users</a>
+</div>
+
+</body>
+</html>

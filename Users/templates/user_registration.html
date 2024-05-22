@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #E6E6FA;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            border: 2px solid #F0FFF0;
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #FAF0E6;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            border-radius: 7px;
+        }
+        .container input {
+            border: 2px solid #F0FFF0;
+            background-color: #E6E6FA;
+            border-radius: 7px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .circle {
+            width: 75px;
+            height: 75px;
+            background-color: #F0FFF0; /* Колір кола */
+            border-radius: 50%; /* Задаємо круглий вигляд колу */
+            position: absolute;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .circle:nth-child(1) {
+            top: 20vh;
+            left: 20vw;
+        }
+
+        .circle:nth-child(2) {
+            top: 75vh;
+            left: 25vw;
+        }
+
+        .circle:nth-child(3) {
+            top: 80vh;
+            left: 80vw;
+        }
+
+        .circle:nth-child(4) {
+            top: 25vh;
+            left: 40vw;
+        }
+
+        .circle:nth-child(5) {
+            top: 85vh;
+            left: 10vw;
+        }
+
+        .circle:nth-child(6) {
+            top: 25vh;
+            left: 75vw;
+        }
+        .circle:nth-child(7) {
+            top: 50vh;
+            left: 5vw;
+        }
+        .circle:nth-child(8) {
+            top: 5vh;
+            left: 5vw;
+        }
+        .circle:nth-child(9) {
+            top: 80vh;
+            left: 50vw;
+        }
+        .circle:nth-child(10) {
+            top: 50vh;
+            left: 30vw;
+        }
+        .circle:nth-child(11) {
+            top: 7vh;
+            left: 60vw;
+        }
+        .circle:nth-child(12) {
+            top: 11vh;
+            left: 90vw;
+        }
+        .circle:nth-child(13) {
+            top: 60vh;
+            left: 67vw;
+        }
+        .circle:nth-child(14) {
+            top: 55vh;
+            left: 90vw;
+        }
+        .circle:nth-child(15) {
+            top: 0vh;
+            left: 35vw;
+
+        }
+        .circle:nth-child(16) {
+            top: 34vh;
+            left: 56vw;
+
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div class="circles-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+
+</html>

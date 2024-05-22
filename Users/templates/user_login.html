@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #E6E6FA;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .header {
+            background-color: #FAF0E6;
+            color: #6495ED;
+            padding: 15px;
+            position: relative;
+            text-align: center;
+        }
+
+        .container {
+            border: 2px solid #F0FFF0;
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #FAF0E6;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="submit"] {
+            display: block;
+            margin: 0 auto;
+            border-radius: 7px;
+
+
+        }
+        .container input {
+            border: 2px solid #F0FFF0;
+            background-color: #E6E6FA;
+            border-radius: 7px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+       .registration-btn{
+            margin-left: 10px;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #F0FFF0;
+            color: #6495ED;
+            border-radius: 5px;
+
+       }
+
+       .registration-btn:hover{
+            background-color: #FAF0E6;
+       }
+
+
+        .circle {
+            width: 75px;
+            height: 75px;
+            background-color: #F0FFF0; /* Колір кола */
+            border-radius: 50%; /* Задаємо круглий вигляд колу */
+            position: absolute;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+
+        .circle:nth-child(1) {
+            top: 20vh;
+            left: 20vw;
+        }
+
+        .circle:nth-child(2) {
+            top: 75vh;
+            left: 25vw;
+        }
+
+        .circle:nth-child(3) {
+            top: 80vh;
+            left: 80vw;
+        }
+
+        .circle:nth-child(4) {
+            top: 25vh;
+            left: 40vw;
+        }
+
+        .circle:nth-child(5) {
+            top: 85vh;
+            left: 10vw;
+        }
+
+        .circle:nth-child(6) {
+            top: 25vh;
+            left: 75vw;
+        }
+        .circle:nth-child(7) {
+            top: 50vh;
+            left: 5vw;
+        }
+        .circle:nth-child(8) {
+            top: 5vh;
+            left: 5vw;
+        }
+        .circle:nth-child(9) {
+            top: 80vh;
+            left: 50vw;
+        }
+        .circle:nth-child(10) {
+            top: 50vh;
+            left: 30vw;
+        }
+        .circle:nth-child(11) {
+            top: 7vh;
+            left: 60vw;
+        }
+        .circle:nth-child(12) {
+            top: 11vh;
+            left: 90vw;
+        }
+        .circle:nth-child(13) {
+            top: 60vh;
+            left: 67vw;
+        }
+        .circle:nth-child(14) {
+            top: 55vh;
+            left: 90vw;
+        }
+        .circle:nth-child(15) {
+            top: 0vh;
+            left: 35vw;
+
+        }
+        .circle:nth-child(16) {
+            top: 34vh;
+            left: 56vw;
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="circles-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <div class="container">
+        <h2>User Login</h2>
+        {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <div class="button-container">
+            <a href="/registration/" class="registration-btn">Registration</a>
+    </div>
+
+</body>
+
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+
+<!--<head>-->
+<!--    <title>Our Company</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            background-color: #E6E6FA;-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--        }-->
+<!--        .header {-->
+<!--            background-color: #FAF0E6;-->
+<!--            color: #6495ED;-->
+<!--            padding: 15px;-->
+<!--            position: relative;-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        .button-container{-->
+<!--            text-align: right;-->
+<!--        }-->
+
+<!--       .registration-btn{-->
+<!--            margin-left: 10px;-->
+<!--            text-decoration: none;-->
+<!--            padding: 10px 20px;-->
+<!--            background-color: #F0FFF0;-->
+<!--            color: #6495ED;-->
+<!--            border-radius: 5px;-->
+
+<!--       }-->
+<!--       .logout-btn:hover,-->
+<!--       .login-btn:hover,-->
+<!--       .registration-btn:hover{-->
+<!--            background-color: #E6E6FA;-->
+<!--       }-->
+
+<!--       .users-btn {-->
+<!--            display: inline-block;-->
+<!--            padding: 10px 20px;-->
+<!--            background-color: #F0FFF0;-->
+<!--            color: #6495ED;-->
+<!--            text-decoration: none;-->
+<!--            border-radius: 5px;-->
+<!--            margin: 10px;-->
+<!--       }-->
+
+<!--       .users-btn:hover {-->
+<!--            background-color: #E6E6FA;-->
+<!--       }-->
+
+
+
+<!--       .container {-->
+<!--            border: 2px solid #F0FFF0;-->
+<!--            max-width: 500px;-->
+<!--            margin: 0 auto;-->
+<!--            background-color: #FAF0E6;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 5px;-->
+<!--            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);-->
+<!--       }-->
+<!--       input[type="submit"] {-->
+<!--                   display: block;-->
+<!--                   margin: 0 auto;-->
+<!--                   border-radius: 7px;-->
+
+
+<!--       }-->
+<!--       .container input {-->
+<!--                border: 2px solid #F0FFF0;-->
+<!--                background-color: #E6E6FA;-->
+<!--                border-radius: 7px;-->
+<!--       }-->
+
+
+<!--        .circle {-->
+<!--            width: 75px;-->
+<!--            height: 75px;-->
+<!--            background-color: #F0FFF0;-->
+<!--            border-radius: 50%;-->
+<!--            position: absolute;-->
+<!--            opacity: 0.6;-->
+<!--            z-index: -1;-->
+<!--        }-->
+
+
+<!--        .circle:nth-child(1) {-->
+<!--            top: 20vh;-->
+<!--            left: 20vw;-->
+<!--        }-->
+
+<!--        .circle:nth-child(2) {-->
+<!--            top: 75vh;-->
+<!--            left: 25vw;-->
+<!--        }-->
+
+<!--        .circle:nth-child(3) {-->
+<!--            top: 80vh;-->
+<!--            left: 80vw;-->
+<!--        }-->
+
+<!--        .circle:nth-child(4) {-->
+<!--            top: 25vh;-->
+<!--            left: 40vw;-->
+<!--        }-->
+
+<!--        .circle:nth-child(5) {-->
+<!--            top: 85vh;-->
+<!--            left: 10vw;-->
+<!--        }-->
+
+<!--        .circle:nth-child(6) {-->
+<!--            top: 25vh;-->
+<!--            left: 75vw;-->
+<!--        }-->
+<!--        .circle:nth-child(7) {-->
+<!--            top: 50vh;-->
+<!--            left: 5vw;-->
+<!--        }-->
+<!--        .circle:nth-child(8) {-->
+<!--            top: 5vh;-->
+<!--            left: 5vw;-->
+<!--        }-->
+<!--        .circle:nth-child(9) {-->
+<!--            top: 80vh;-->
+<!--            left: 50vw;-->
+<!--        }-->
+<!--        .circle:nth-child(10) {-->
+<!--            top: 50vh;-->
+<!--            left: 30vw;-->
+<!--        }-->
+<!--        .circle:nth-child(11) {-->
+<!--            top: 7vh;-->
+<!--            left: 60vw;-->
+<!--        }-->
+<!--        .circle:nth-child(12) {-->
+<!--            top: 11vh;-->
+<!--            left: 90vw;-->
+<!--        }-->
+<!--        .circle:nth-child(13) {-->
+<!--            top: 60vh;-->
+<!--            left: 67vw;-->
+<!--        }-->
+<!--        .circle:nth-child(14) {-->
+<!--            top: 55vh;-->
+<!--            left: 90vw;-->
+<!--        }-->
+<!--        .circle:nth-child(15) {-->
+<!--            top: 0vh;-->
+<!--            left: 35vw;-->
+
+<!--        }-->
+<!--        .circle:nth-child(16) {-->
+<!--            top: 34vh;-->
+<!--            left: 56vw;-->
+
+<!--        }-->
+
+<!--    </style>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--    <div class="circles-container">-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--        <div class="circle"></div>-->
+<!--    </div>-->
+<!--    <div class="header">-->
+<!--        <div class="button-container">-->
+<!--            <a href="/registration/" class="registration-btn">Registration</a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="container">-->
+<!--        <h2>User Login</h2>-->
+<!--        {% if error_message %}-->
+<!--            <p style="color: red;">{{ error_message }}</p>-->
+<!--        {% endif %}-->
+<!--        <form method="POST">-->
+<!--            {% csrf_token %}-->
+<!--            {{ form.as_p }}-->
+
+<!--            <input type="submit" value="Login">-->
+<!--        </form>-->
+<!--    </div>-->
+
+
+
+
+<!--</body>-->
+<!--</html>-->

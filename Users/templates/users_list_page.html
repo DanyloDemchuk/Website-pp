@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E6E6FA;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #FAF0E6;
+            color: #6495ED;
+            padding: 15px;
+            position: relative;
+            text-align: center;
+        }
+        .logout-btn{
+            padding: 10px 20px;
+            background-color: #F0FFF0;
+            color: #6495ED;
+            text-decoration: none;
+            border-radius: 5px;
+            position: absolute;
+            top: 15px;
+            right: 15px;}
+
+        .add-btn,
+        .home-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #F0FFF0;
+            color: #6495ED;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        .home-btn:hover,
+        .add-btn:hover,
+        .logout-btn:hover {
+            background-color: #E6E6FA;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #000000;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #FAF0E6;
+            color: #6495ED;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e0e0e0;
+        }
+
+        .edit-btn {
+            display: inline-block;
+            padding: 8px;
+            background-color: #F0FFF0;
+            color: #6495ED;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .edit-btn:hover {
+            background-color: #E6E6FA;
+        }
+
+        .edit-delete-column{
+            width: 111px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="header">
+        <a href="/logout/" class="logout-btn">Logout</a>
+        <h1>Users List</h1>
+        <a href="/" class="home-btn">Home</a>
+        <a href="/users/add/" class="add-btn">Add</a>
+    </div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Edit / Delete</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td class="edit-delete-column">
+                <a href="/users/{{ user.id }}/" class="edit-btn">Edit</a>
+                <a href="/users/delete/{{ user.id }}/" class="edit-btn" onclick="return confirm('Ви впевнені, що хочете видалити користувача?')">Delete</a>
+            </td>
+
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">No users found.</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
