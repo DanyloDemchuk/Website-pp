@@ -1,7 +1,7 @@
 # Web-Site(Pet Project)
 
 I am studying Python and that is my first and not perfect project. Trying to improve and add something new.
-This is a Web Site with database of cars and its owners. With some api, admin panel, automation tests(Selenium), forms, my custom template and so on...
+This is a Web Site with database of cars and its owners. With some api, admin panel, automation tests(Selenium), forms, my custom template...
 
 Here are all available links:
 <p>http://127.0.0.1:8000/   Home page</p>
